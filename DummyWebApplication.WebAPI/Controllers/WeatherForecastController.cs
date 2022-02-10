@@ -18,8 +18,9 @@ namespace DummyWebApplication.WebAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        [Route("GetWeatherForecast")]
+        public IEnumerable<WeatherForecast> RegularForecast()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -30,8 +31,9 @@ namespace DummyWebApplication.WebAPI.Controllers
             .ToArray();
         }
 
-        [HttpGet(Name = "GetWeatherForecast2")]
-        public ActionResult Get2()
+        [HttpGet]
+        [Route("ExtraForecast")]
+        public ActionResult ExtraForecast()
         {
             return Ok(new { customPaload = "hello" });
         }
