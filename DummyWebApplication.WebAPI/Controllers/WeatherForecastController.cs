@@ -29,5 +29,13 @@ namespace DummyWebApplication.WebAPI.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet(Name = "GetWeatherForecast2")]
+        public ActionResult Get2()
+        {
+            return Ok(new { customPaload = "hello" });
+        }
+
+
     }
 }
